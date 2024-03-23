@@ -1,0 +1,75 @@
+<div class="registration-form">
+    <h2>Registration</h2>
+    <p><em>* Fields marked with asterisk are required</em></p>
+
+    <form [formGroup]="registrationForm">    
+
+        <div class="input-group">
+        <label for="first-name">First Name *</label>
+        <input type="text" id="first-name" placeholder="Please write your first name here" required>
+        <div *ngIf="registrationForm.get('firstName')?.invalid && registrationForm.get('firstName')?.touched">
+          <span class="error-message">First Name is required</span>
+        </div>      
+        </div>
+    
+        <div class="input-group">
+        <label for="last-name">Last Name *</label>
+        <input type="text" id="last-name" placeholder="Please write your last name here" required>
+        <div *ngIf="registrationForm.get('lastName')?.invalid && registrationForm.get('lastName')?.touched">
+          <span class="error-message">Last Name is required</span>
+        </div>        
+        </div>
+    
+        <div class="input-group">
+        <label for="user-name">User Name *</label>
+        <input type="text" id="user-name" placeholder="How do you want us to identify you?" required>
+        <div *ngIf="registrationForm.get('username')?.invalid && registrationForm.get('username')?.touched">
+          <span class="error-message">Username is required</span>
+        </div>        
+        </div>
+    
+        <div class="input-group">
+        <label for="email">Email *</label>
+        <input type="email" id="email" placeholder="Which email address should we contact you?" required>
+        <div *ngIf="registrationForm.get('email')?.invalid && registrationForm.get('email')?.touched">
+          <span class="error-message">Email is required</span>
+        </div>        
+        </div>
+    
+        <div class="input-group">
+        <label for="password">Password *</label>
+        <input type="password" id="password" formControlName="password" placeholder="Please include letters, numbers, and special chars." required>
+        <div *ngIf="registrationForm.get('password')?.invalid && registrationForm.get('password')?.touched">
+          <span class="error-message">Password is required</span>
+        </div>        
+        </div>
+    
+        <div class="input-group">
+        <label for="confirm-password">Confirm Password *</label>
+        <input type="password" id="confirm-password" formControlName="confirmPassword" placeholder="Please include letters, numbers, and special chars." required>
+          <div *ngIf="isMismatchError()" class="error-message">
+            Passwords do not match
+          </div>      
+          <div *ngIf="registrationForm.get('confirmPassword')?.invalid && registrationForm.get('confirmPassword')?.touched">
+            <span class="error-message">Password confirmation is required</span>
+          </div>                      
+        </div>
+    
+        <div class="input-group current-profile-photo-container">
+            <label for="profile-photo">Current Profile Photo</label>
+            <p>Add a profile photo so your friends know it's you.</p>
+            <input type="file" id="profile-photo" (change)="onFileSelected($event)" style="display: none;">
+            <button (click)="selectProfilePhoto()">Add photo</button>
+            <div class="avatar-container">
+                <img [src]="avatarSrc" alt="Profile Photo">        
+            </div>
+        </div>
+    
+        <div class="buttons">
+        <button class="register-btn" (click)="onSubmit()">Register</button>
+        <button class="cancel-btn" [routerLink]="['/login']">Cancel</button>
+        </div>
+
+    </form>    
+</div>
+  

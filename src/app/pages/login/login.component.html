@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="login-box">
+        <h2>LOGIN</h2>
+        <div class="input-group">
+            <span class="icon"><img src="assets/user-icon.png" alt="Username icon"></span>
+            <input type="text" placeholder="Username">
+        </div>
+        <div class="input-group">
+            <span class="icon"><img src="assets/password-icon.png" alt="Password icon"></span>
+            <input type="password" placeholder="Password" [autocomplete]="autocompleteEnabled ? 'current-password' : 'off'">
+        </div>
+        <div class="remember-me">
+            <label for="remember">Recordar contraseña</label>
+            <input type="checkbox" id="remember" (change)="toggleAutocomplete($event)">
+
+        </div>
+        <div class="forgot-password">
+            <a href="forgot-password.html">¿Olvidaste tu contraseña?</a>
+        </div>
+        <button class="login-btn" [routerLink]="['/welcome']">Login</button>
+        <button class="signup-btn">Sign Up</button>
+    </div>
+</div>

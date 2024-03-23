@@ -1,0 +1,110 @@
+  /* Estilos generales */
+  .registration-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  .input-group {
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f5f5f5;
+    box-sizing: border-box;
+    transition: background-color 0.3s;
+  }
+
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus {
+    background-color: #eee;
+    outline: none;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+
+  .current-profile-photo-container {
+    background-color: #f0f0f0;
+    border-radius: 8px; /* Esquinas redondeadas */
+    padding: 10px;
+    padding-bottom: 77px;
+  }
+
+  .avatar-container {
+    width: 33%;
+    float: left;
+    text-align: center;
+  }
+
+  .avatar-container img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ccc;
+  }
+
+  .add-photo-container {
+    width: 67%;
+    float: left;
+    padding-left: 20px;
+    box-sizing: border-box;
+  }
+
+  .add-photo-text,
+  .add-photo-button {
+    margin-bottom: 10px;
+  }
+
+  .buttons {
+    text-align: center;
+  }
+
+  button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  .register-btn {
+    margin-right: 36px; /* Añadimos margen derecho */
+  }
+
+  .error-message {
+    color: red;
+    font-size: 0.8em;
+    margin-top: 5px; /* Espacio entre el campo y el mensaje de error */
+  }
+  

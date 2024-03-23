@@ -1,0 +1,48 @@
+<!-- Header -->
+<header class="header">
+  <div class="menu-toggle" (click)="toggleSidebar()">
+    <!-- Ícono del menú hamburguesa -->
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+  <h1 class="title">{{appHeaderTitle}}</h1>
+  <div class="user-info">
+    <div class="avatar">
+      <!-- Aquí se carga la imagen del avatar del usuario -->
+      <img [src]="avatarImagePath" alt="Avatar">
+    </div>
+    <div class="user-name">{{userName}}</div>
+  </div>
+</header>
+
+<!-- Sidebar -->
+<div class="sidebar" [ngClass]="{'active': sidebarOpen}">
+  <ul>
+    <!-- Iterar sobre las opciones del menú y generar las opciones del menú -->
+    <li *ngFor="let option of menuOptions">{{option.title}}</li>
+  </ul>
+</div>
+
+<!-- Contenido principal de la página -->
+<div class="content">
+    <h1>Welcome</h1>
+    <br/>
+    <h2>{{ greetingMessage }}</h2>
+    <h2>{{ currentTime }}</h2>
+    <br/>
+    <p>Please feel free to Explore the features of the app.</p>
+    <hr/>
+      <!-- Contenedor de las tarjetas -->
+    <div class="card-container">
+      <!-- Iterar sobre las opciones del menú y generar tarjetas -->
+      <div *ngFor="let option of menuOptions" class="card">
+        <img [src]="option.imagePath" class="card-img-top" alt="Option image">
+        <div class="card-body">
+          <h5 class="card-title">{{ option.title }}</h5>
+          <p class="card-text">{{ option.content }}</p>
+        </div>
+      </div>
+    </div>
+
+</div>
